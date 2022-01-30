@@ -24,7 +24,7 @@ const Nav = () => {
       )
       // whenever we get a response back, only then will then() run
       // we no longer need to use json()
-      .then((response) => response)
+
       .then((videoArray) => {
         console.log(videoArray.data.items);
         const videoIdArray = videoArray.data.items.map(
