@@ -5,9 +5,10 @@ import axios from "axios";
 const Nav = () => {
   const [formValue, setFromValue] = useState("");
   const [videoArray, setVideoArray] = useState([]);
-
-  const apiKey =
-    "https://youtube.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyB5LRryc3dUt4OujKIXptSJcX46XTnUlvY";
+  const baseUrl = "https://youtube.googleapis.com/youtube/v3/search?";
+  const apiKey = "&key=AIzaSyB5LRryc3dUt4OujKIXptSJcX46XTnUlvY";
+  const qparam = "&type=video&part=snippet&maxResults=";
+  const maxResult = "10&q=";
 
   const handleChange = (e) => {
     setFromValue(e.target.value);
@@ -17,14 +18,8 @@ const Nav = () => {
     e.preventDefault();
     console.log("submitting");
 
-    // Any AJAX calls/HTTP REQUEST using axios/fetch will return a Promise => response
     axios
-      .get(
-        ` https://youtube.googleapis.com/youtube/v3/search?key=AIzaSyB5LRryc3dUt4OujKIXptSJcX46XTnUlvY&type=video&part=snippet&maxResults=10&q=${formValue}`
-      )
-      // whenever we get a response back, only then will then() run
-      // we no longer need to use json()
-
+      .get(`${baseUrl}${apiKey}${qparam}${maxResult} ${formValue}`)
       .then((videoArray) => {
         console.log(videoArray.data.items);
         const videoIdArray = videoArray.data.items.map(
