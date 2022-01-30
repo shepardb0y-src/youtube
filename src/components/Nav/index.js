@@ -2,13 +2,16 @@ import React from "react";
 import "./style.css";
 import Search from "../../pages/Search";
 import MenuIcon from "@mui/icons-material/Menu";
+import VideocamOutlinedIcon from "@mui/icons-material/VideocamOutlined";
+import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
+import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 
 const Nav = () => {
   return (
     <div id="navbar">
-      <MenuIcon />
       <ul className="nav">
         <li className="nav-item">
+          <MenuIcon />
           <img
             className="youtube-logo"
             src="https://cdn1.iconfinder.com/data/icons/follow-the-herd/512/youtube_right-512.png"
@@ -16,13 +19,13 @@ const Nav = () => {
           />
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">
-            <Search />
-          </a>
+          <Search />
         </li>
         <li className="nav-item">
           <a className="nav-link" href="#">
-            Link
+            <VideocamOutlinedIcon />
+            <AppsOutlinedIcon />
+            <NotificationsActiveOutlinedIcon />
           </a>
         </li>
         <li className="nav-item">

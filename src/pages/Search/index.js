@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import SearchIcon from "@mui/icons-material/Search";
+import KeyboardVoiceOutlinedIcon from "@mui/icons-material/KeyboardVoiceOutlined";
 import axios from "axios";
 
 const Search = () => {
@@ -36,7 +38,10 @@ const Search = () => {
       <form onSubmit={handleSubmit} action="">
         <label htmlFor="Search-bar">Search:</label>
         <input onChange={handleChange} type="text" value={formValue} />
-        <button type="submit">Click</button>
+        <button type="submit">
+          <SearchIcon />
+        </button>
+        <KeyboardVoiceOutlinedIcon />
       </form>
 
       {videoArray.map((url) => {
