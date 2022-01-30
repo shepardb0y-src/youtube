@@ -1,10 +1,12 @@
 import React from "react";
 import "./style.css";
 import Search from "../../pages/Search";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const Nav = () => {
   return (
     <div id="navbar">
+      <MenuIcon />
       <ul className="nav">
         <li className="nav-item">
           <img
