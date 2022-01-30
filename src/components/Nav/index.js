@@ -4,8 +4,8 @@ import axios from "axios";
 
 const Nav = () => {
   const [formValue, setFromValue] = useState("");
-  const [videoId, setVideoId] = useState([]);
-  const srcVidRender = `https://www.youtube.com/embed/${videoId}`;
+  const [videoArray, setVideoArray] = useState([]);
+  //   const srcVidRender = `https://www.youtube.com/embed/${videoId}`;
 
   const apiKey =
     "https://youtube.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyB5LRryc3dUt4OujKIXptSJcX46XTnUlvY";
@@ -25,14 +25,17 @@ const Nav = () => {
       )
       // whenever we get a response back, only then will then() run
       // we no longer need to use json()
-      .then((response) => {
-        console.log(response.data.items[0].id.videoId);
-        setVideoId(response.data.items[0].id.videoId);
+      .then((response) => response)
+      .then((videoArray) => {
+        console.log(videoArray.data.items);
+        const videoIdArray = videoArray.data.items.map((v) => v.id.videoId);
+        setVideoArray(videoIdArray);
+        console.log(videoIdArray);
       })
       .catch((err) => console.error(err));
   };
   //   console.log()
-  console.log(srcVidRender);
+  //   console.log(srcVidRender);
   return (
     <div>
       <form onSubmit={handleSubmit} action="">
@@ -41,7 +44,7 @@ const Nav = () => {
         <button type="submit">Click</button>
       </form>
 
-      {
+      {/* {videoId.map((video, i) => {
         <iframe
           width="560"
           height="315"
@@ -50,8 +53,8 @@ const Nav = () => {
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-        ></iframe>
-      }
+        ></iframe>;
+      })} */}
     </div>
   );
 };
