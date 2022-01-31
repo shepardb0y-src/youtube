@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles.css";
 import { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import KeyboardVoiceOutlinedIcon from "@mui/icons-material/KeyboardVoiceOutlined";
@@ -37,7 +38,12 @@ const Search = () => {
     <div>
       <form onSubmit={handleSubmit} action="">
         <label htmlFor="Search-bar">Search:</label>
-        <input onChange={handleChange} type="text" value={formValue} />
+        <input
+          onChange={handleChange}
+          type="text"
+          value={formValue}
+          className="input-srch"
+        />
         <button type="submit">
           <SearchIcon />
         </button>
