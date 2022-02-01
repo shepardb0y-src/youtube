@@ -6,7 +6,7 @@ import KeyboardVoiceOutlinedIcon from "@mui/icons-material/KeyboardVoiceOutlined
 import axios from "axios";
 
 const Search = (props) => {
-  console.log(props);
+  console.log(props.videoArray);
   return (
     <div>
       {/* {props.videoArray.map((url) => {

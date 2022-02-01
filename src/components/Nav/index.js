@@ -36,11 +36,10 @@ const Nav = () => {
           (v) => "https://www.youtube.com/embed/" + v.id.videoId
         );
         setVideoArray(videoIdArray);
-        console.log(videoIdArray);
       })
       .catch((err) => console.error(err));
   };
-
+  console.log(videoArray);
   return (
     <div id="navbar">
       <ul className="nav">
