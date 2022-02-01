@@ -19,12 +19,7 @@ const Nav = () => {
   const apiKey = "&key=AIzaSyB5LRryc3dUt4OujKIXptSJcX46XTnUlvY";
   const qparam = "&type=video&part=snippet&maxResults=";
   const maxResult = "10&q=";
-  const urls = [];
-  const url = videoArray.map((url) => {
-    console.log(url);
-    urls.push(url);
-  });
-  console.log(urls);
+
   const handleChange = (e) => {
     setFromValue(e.target.value);
   };
@@ -87,7 +82,25 @@ const Nav = () => {
         </li>
       </ul>
       <div>
-        <Search url={urls} />
+        {/* {videoArray.map((url) => {
+          console.log(url);
+          let iframe = (
+            <div>
+              <iframe
+                width="560"
+                height="315"
+                src={url}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          );
+          return iframe;
+        })} */}
+
+        <Search videoArray={videoArray} />
       </div>
     </div>
   );
