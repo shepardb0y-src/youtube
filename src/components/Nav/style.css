@@ -2,6 +2,9 @@
   padding: 0;
   margin: 0;
 }
+.youtube-logo {
+  height: 30px;
+}
 .nav {
   display: flex;
   align-items: center;
@@ -11,6 +14,7 @@
 .form {
   display: flex;
 }
-.youtube-logo {
-  height: 30px;
+
+.src-btn {
+  background-color: white;
 }

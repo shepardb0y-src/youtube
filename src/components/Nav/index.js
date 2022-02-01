@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./style.css";
+import Search from "../../components/Search";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import axios from "axios";
 import KeyboardVoiceOutlinedIcon from "@mui/icons-material/KeyboardVoiceOutlined";
@@ -62,7 +63,7 @@ const Nav = () => {
               value={formValue}
               className="input-srch"
             />
-            <button type="submit">
+            <button className="src-btn" type="submit">
               <SearchIcon />
             </button>
             <KeyboardVoiceOutlinedIcon />
@@ -80,6 +81,12 @@ const Nav = () => {
           <Link to="login">login</Link>
         </li>
       </ul>
+      <div>
+        {videoArray.map((url) => {
+          console.log(url);
+        })}
+        <Search videoArray={videoArray} />
+      </div>
     </div>
   );
 };
