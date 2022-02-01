@@ -5,11 +5,11 @@ import SearchIcon from "@mui/icons-material/Search";
 import KeyboardVoiceOutlinedIcon from "@mui/icons-material/KeyboardVoiceOutlined";
 import axios from "axios";
 
-const Search = (videoArray) => {
-  console.log(videoArray);
+const Search = (url) => {
+  console.log(url);
   return (
     <div>
-      {/* {videoArray.map((url) => {
+      {url.map((url) => {
         console.log(url);
         let iframe = (
           <div>
@@ -25,7 +25,7 @@ const Search = (videoArray) => {
           </div>
         );
         return iframe;
-      })} */}
+      })}
     </div>
   );
 };

@@ -19,7 +19,12 @@ const Nav = () => {
   const apiKey = "&key=AIzaSyB5LRryc3dUt4OujKIXptSJcX46XTnUlvY";
   const qparam = "&type=video&part=snippet&maxResults=";
   const maxResult = "10&q=";
-
+  const urls = [];
+  const url = videoArray.map((url) => {
+    console.log(url);
+    urls.push(url);
+  });
+  console.log(urls);
   const handleChange = (e) => {
     setFromValue(e.target.value);
   };
@@ -30,9 +35,9 @@ const Nav = () => {
 
     axios
       .get(`${baseUrl}${apiKey}${qparam}${maxResult} ${formValue}`)
-      .then((videoArray) => {
-        console.log(videoArray.data.items);
-        const videoIdArray = videoArray.data.items.map(
+      .then((res) => {
+        console.log(res.data.items);
+        const videoIdArray = res.data.items.map(
           (v) => "https://www.youtube.com/embed/" + v.id.videoId
         );
         setVideoArray(videoIdArray);
@@ -82,10 +87,7 @@ const Nav = () => {
         </li>
       </ul>
       <div>
-        {videoArray.map((url) => {
-          console.log(url);
-        })}
-        <Search videoArray={videoArray} />
+        <Search url={urls} />
       </div>
     </div>
   );
