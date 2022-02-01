@@ -7,9 +7,12 @@ import axios from "axios";
 
 const Search = (props) => {
   console.log(props.videoArray);
+  const vid = props.videoArray;
+  console.log(vid);
   return (
     <div>
-      {/* {props.videoArray.map((url) => {
+      {
+        /* {props.videoArray.map((url) => {
         console.log(url);
         let iframe = (
           <div>
@@ -25,7 +28,9 @@ const Search = (props) => {
           </div>
         );
         return iframe;
-      })} */}
+      })} */
+        vid
+      }
     </div>
   );
 };
