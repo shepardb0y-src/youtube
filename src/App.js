@@ -17,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="login" element={<Login setUser={setUser} />} />
-          <Route path="Search" element={<Search />} />
+          {/* <Route path="Search" element={<Search />} /> */}
         </Routes>
       </UserContext.Provider>
     </div>

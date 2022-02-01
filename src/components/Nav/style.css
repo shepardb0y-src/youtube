@@ -8,6 +8,9 @@
   border: black 1px solid;
   justify-content: space-between;
 }
+.nav-item {
+  display: flex;
+}
 .youtube-logo {
   height: 30px;
 }
