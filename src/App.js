@@ -14,9 +14,7 @@ function App() {
     <div className="App">
       <UserContext.Provider value={user}>
         <Nav />
-        <div className="App-2">
-          <Aside />
-        </div>
+        <div className="App-2"></div>
         <Routes>
           {/* <Route path="/" element={<Home />} /> */}
           <Route path="/search" element={<Search />} />

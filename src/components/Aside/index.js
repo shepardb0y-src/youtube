@@ -3,7 +3,7 @@ import AsideRow from "../../components/AsideRow";
 
 const Aside = () => {
   return (
-    <div>
+    <div className="aside">
       Aside
       <AsideRow />
       <AsideRow />

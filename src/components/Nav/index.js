@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useContext } from "react";
 import "./style.css";
-import Search from "../../components/Search";
+import Aside from "../../components/Aside";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import axios from "axios";
 import KeyboardVoiceOutlinedIcon from "@mui/icons-material/KeyboardVoiceOutlined";
@@ -19,7 +19,7 @@ const Nav = () => {
   const baseUrl = "https://youtube.googleapis.com/youtube/v3/search?";
   const apiKey = "&key=AIzaSyB5LRryc3dUt4OujKIXptSJcX46XTnUlvY";
   const qparam = "&type=video&part=snippet&maxResults=";
-  const maxResult = "10&q=";
+  const maxResult = "12&q=";
 
   console.log("nav", user);
   const handleChange = (e) => {
@@ -90,24 +90,29 @@ const Nav = () => {
           <li>Logout</li>
         )}
       </ul>
-      <div>
-        {videoArray.map((url) => {
-          console.log(url);
-          let iframe = (
-            <div>
-              <iframe
-                width="560"
-                height="315"
-                src={url}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-          );
-          return iframe;
-        })}
+      <div className="test">
+        <Aside />
+        <div>
+          <div className="search-results">
+            {videoArray.map((url) => {
+              console.log(url);
+              let iframe = (
+                <div>
+                  <iframe
+                    width="360"
+                    height="115"
+                    src={url}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              );
+              return iframe;
+            })}
+          </div>
+        </div>
       </div>
     </div>
   );
