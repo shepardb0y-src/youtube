@@ -12,7 +12,7 @@ const Search = (props) => {
   return (
     <div>
       {
-        /* {props.videoArray.map((url) => {
+        /* {props.vid.map((url) => {
         console.log(url);
         let iframe = (
           <div>
@@ -29,7 +29,8 @@ const Search = (props) => {
         );
         return iframe;
       })} */
-        <h1>hi</h1>
+
+        vid
       }
     </div>
   );

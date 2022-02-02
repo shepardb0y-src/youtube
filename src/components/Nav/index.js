@@ -78,9 +78,13 @@ const Nav = () => {
           </a>
         </li>
 
-        <li>
-          <Link to="login">login</Link>
-        </li>
+        {!user ? (
+          <li>
+            <Link to="login">Login</Link>
+          </li>
+        ) : (
+          <li>Logout</li>
+        )}
       </ul>
       <div>
         {videoArray.map((url) => {

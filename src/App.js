@@ -13,11 +13,10 @@ function App() {
     <div className="App">
       <UserContext.Provider value={user}>
         <Nav />
-
         <Routes>
-          <Route path="/" element={<Login setUser={setUser} />} />
-          <Route path="login" element={<Login />} />
-          <Route path="Home" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="search" element={<Search />} />
+          <Route path="login" element={<Login setUser={setUser} />} />
         </Routes>
       </UserContext.Provider>
     </div>
