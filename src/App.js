@@ -15,9 +15,9 @@ function App() {
         <Nav />
 
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="login" element={<Login setUser={setUser} />} />
-          <Route path="Search" element={<Search />} />
+          <Route path="/" element={<Login setUser={setUser} />} />
+          <Route path="login" element={<Login />} />
+          <Route path="Home" element={<Home />} />
         </Routes>
       </UserContext.Provider>
     </div>

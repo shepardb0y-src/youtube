@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "./style.css";
 import Search from "../../components/Search";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
@@ -10,11 +10,12 @@ import VideocamOutlinedIcon from "@mui/icons-material/VideocamOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
 import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
+import Usercontext from "../../contexts/Usercontext";
 
 const Nav = () => {
   const [formValue, setFromValue] = useState("");
   const [videoArray, setVideoArray] = useState([]);
-
+  const user = useContext(Usercontext);
   const baseUrl = "https://youtube.googleapis.com/youtube/v3/search?";
   const apiKey = "&key=AIzaSyB5LRryc3dUt4OujKIXptSJcX46XTnUlvY";
   const qparam = "&type=video&part=snippet&maxResults=";
@@ -27,17 +28,18 @@ const Nav = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("submitting");
-
-    axios
-      .get(`${baseUrl}${apiKey}${qparam}${maxResult} ${formValue}`)
-      .then((res) => {
-        console.log(res.data.items);
-        const videoIdArray = res.data.items.map(
-          (v) => "https://www.youtube.com/embed/" + v.id.videoId
-        );
-        setVideoArray(videoIdArray);
-      })
-      .catch((err) => console.error(err));
+    user
+      ? axios
+          .get(`${baseUrl}${apiKey}${qparam}${maxResult} ${formValue}`)
+          .then((res) => {
+            console.log(res.data.items);
+            const videoIdArray = res.data.items.map(
+              (v) => "https://www.youtube.com/embed/" + v.id.videoId
+            );
+            setVideoArray(videoIdArray);
+          })
+          .catch((err) => console.error(err))
+      : null;
   };
   console.log(videoArray);
   return (
@@ -81,7 +83,7 @@ const Nav = () => {
         </li>
       </ul>
       <div>
-        {/* {videoArray.map((url) => {
+        {videoArray.map((url) => {
           console.log(url);
           let iframe = (
             <div>
@@ -97,9 +99,7 @@ const Nav = () => {
             </div>
           );
           return iframe;
-        })} */}
-
-        <Search videoArray={videoArray} />
+        })}
       </div>
     </div>
   );

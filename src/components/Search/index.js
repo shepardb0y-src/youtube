@@ -29,7 +29,7 @@ const Search = (props) => {
         );
         return iframe;
       })} */
-        vid
+        <h1>hi</h1>
       }
     </div>
   );
