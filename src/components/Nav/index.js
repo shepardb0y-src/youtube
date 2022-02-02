@@ -21,6 +21,7 @@ const Nav = () => {
   const qparam = "&type=video&part=snippet&maxResults=";
   const maxResult = "10&q=";
 
+  console.log("nav", user);
   const handleChange = (e) => {
     setFromValue(e.target.value);
   };
@@ -42,6 +43,9 @@ const Nav = () => {
       : null;
   };
   console.log(videoArray);
+  // const handleClick = (e) => {
+
+  // };
   return (
     <div id="navbar">
       <ul className="nav">

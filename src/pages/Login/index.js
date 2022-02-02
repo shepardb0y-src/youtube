@@ -18,7 +18,7 @@ const Login = ({ setUser }) => {
     // We can use useNavigate from React Router to redirect our users to a different component/page
     // DO NOT FORGET the forward / in front of path in navigate()
     //gon change from home to Search Page
-    navigate("/");
+    navigate("/search");
   };
   console.log(username);
   return (

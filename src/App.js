@@ -15,7 +15,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="search" element={<Search />} />
+          <Route path="/search" element={<Search />} />
           <Route path="login" element={<Login setUser={setUser} />} />
         </Routes>
       </UserContext.Provider>
