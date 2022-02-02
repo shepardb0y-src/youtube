@@ -1,3 +1,11 @@
-/* .url-png {
-  height: 100%;
+.url-png {
+  margin-left: 10%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+/* .Recommended-videos {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10%;
 } */

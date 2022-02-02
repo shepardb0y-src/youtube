@@ -27,7 +27,7 @@ const Home = () => {
         .then((res) => {
           console.log(res.data.items);
           const videoIdArray = res.data.items.map(
-            (v) => v.snippet.thumbnails.default.url
+            (v) => "https://www.youtube.com/embed/" + v.id.videoId
           );
           setVideoArray(videoIdArray);
         });
@@ -38,24 +38,26 @@ const Home = () => {
 
   console.log(videoArray);
   return (
-    <div>
-      {videoArray.map((url) => {
-        let iframe = (
-          <div>
-            <iframe
-              className="url-png"
-              width="360"
-              height="115"
-              src={url}
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-        );
-        return iframe;
-      })}
+    <div className="Recommended-videos">
+      <h5 className="Recommended-video-title">Recommended Videos</h5>
+      <div className="url-png">
+        {videoArray.map((url) => {
+          let iframe = (
+            <div>
+              <iframe
+                width="360"
+                height="115"
+                src={url}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          );
+          return iframe;
+        })}
+      </div>
     </div>
   );
 };

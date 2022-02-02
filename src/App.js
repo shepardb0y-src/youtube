@@ -6,16 +6,17 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Search from "./components/Search";
-import Aside from "./components/Aside";
+import Header from "./components/Header";
 
 function App() {
   const [user, setUser] = useState("");
   return (
     <div className="App">
       <UserContext.Provider value={user}>
-        <Nav />
+        <Header />
         <div className="App-2"></div>
         <Routes>
+          <Route />
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
           <Route path="login" element={<Login setUser={setUser} />} />
