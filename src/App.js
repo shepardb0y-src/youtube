@@ -16,7 +16,7 @@ function App() {
         <Nav />
         <div className="App-2"></div>
         <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
           <Route path="login" element={<Login setUser={setUser} />} />
         </Routes>
