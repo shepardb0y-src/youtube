@@ -1,11 +1,17 @@
 import React from "react";
 import AsideRow from "../../components/AsideRow";
+import { Link } from "react-router-dom";
 
 const Aside = () => {
   return (
     <div className="aside">
-      <AsideRow title="Home" />
-      <AsideRow title="Explore" />
+      <Link to="/">
+        <AsideRow title="Home" />
+      </Link>
+      <Link to="search">
+        <AsideRow title="Explore" />
+      </Link>
+
       <AsideRow title="Subscriptions" />
       <AsideRow title="Originals" />
       <AsideRow title="Youtube Music" />
