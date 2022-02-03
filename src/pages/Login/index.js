@@ -21,6 +21,7 @@ const Login = ({ setUser }) => {
     navigate("/search");
   };
   console.log(username);
+
   return (
     <form onSubmit={handleSubmit}>
       <div className="mb-3">

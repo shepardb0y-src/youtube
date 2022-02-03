@@ -5,14 +5,13 @@ import SearchIcon from "@mui/icons-material/Search";
 import KeyboardVoiceOutlinedIcon from "@mui/icons-material/KeyboardVoiceOutlined";
 import axios from "axios";
 
-const Search = (props) => {
-  console.log(props.videoArray);
-  const vid = props.videoArray;
-  console.log(vid);
+const Search = ({ videoArray }) => {
+  console.log(videoArray);
+  // const vid = props.videoArray;
+  // console.log(vid);
   return (
     <div>
-      {
-        /* {props.vid.map((url) => {
+      {/* {videoArray.map((url) => {
         console.log(url);
         let iframe = (
           <div>
@@ -28,10 +27,7 @@ const Search = (props) => {
           </div>
         );
         return iframe;
-      })} */
-
-        vid
-      }
+      })} */}
     </div>
   );
 };

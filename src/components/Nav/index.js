@@ -17,7 +17,7 @@ const Nav = () => {
   const [videoArray, setVideoArray] = useState([]);
   const user = useContext(Usercontext);
   const baseUrl = "https://youtube.googleapis.com/youtube/v3/search?";
-  const apiKey = "&key=AIzaSyB5LRryc3dUt4OujKIXptSJcX46XTnUlvY";
+  const apiKey = "&key=AIzaSyBq_tTvCbp79dd8TA2k6LCdB5EAlvdomgk";
   const qparam = "&type=video&part=snippet&maxResults=";
   const maxResult = "12&q=";
 
