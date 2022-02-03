@@ -76,7 +76,9 @@ const Nav = () => {
         </li>
         <li className="nav-item">
           <a className="nav-link" href="#">
-            <VideocamOutlinedIcon />
+            <Link to="/error">
+              <VideocamOutlinedIcon />
+            </Link>
             <AppsOutlinedIcon />
             <NotificationsActiveOutlinedIcon />
           </a>

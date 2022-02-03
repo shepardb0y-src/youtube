@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Search from "./components/Search";
 import Header from "./components/Header";
+import Error from "./pages/Error";
 
 function App() {
   const [user, setUser] = useState("");
@@ -15,11 +16,13 @@ function App() {
       <UserContext.Provider value={user}>
         <Header />
         <div className="App-2"></div>
+
         <Routes>
           <Route />
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
           <Route path="/login" element={<Login setUser={setUser} />} />
+          <Route path="/error" element={<Error />} />
         </Routes>
       </UserContext.Provider>
     </div>
