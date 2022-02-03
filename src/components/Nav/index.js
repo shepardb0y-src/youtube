@@ -78,9 +78,9 @@ const Nav = () => {
           <a className="nav-link" href="#">
             <Link to="/error">
               <VideocamOutlinedIcon />
+              <AppsOutlinedIcon />
+              <NotificationsActiveOutlinedIcon />
             </Link>
-            <AppsOutlinedIcon />
-            <NotificationsActiveOutlinedIcon />
           </a>
         </li>
 
