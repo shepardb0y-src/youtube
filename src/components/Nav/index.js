@@ -75,13 +75,11 @@ const Nav = () => {
           </form>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">
-            <Link to="/error">
-              <VideocamOutlinedIcon />
-              <AppsOutlinedIcon />
-              <NotificationsActiveOutlinedIcon />
-            </Link>
-          </a>
+          <Link to="/error">
+            <VideocamOutlinedIcon />
+            <AppsOutlinedIcon />
+            <NotificationsActiveOutlinedIcon />
+          </Link>
         </li>
 
         {!user ? (
