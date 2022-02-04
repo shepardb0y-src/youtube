@@ -13,7 +13,7 @@ const Home = () => {
   const apiKey = "&key=AIzaSyBq_tTvCbp79dd8TA2k6LCdB5EAlvdomgk";
   const firstParam = "&type=video&part=snippet&maxResults=";
   const maxResult = "12&q=";
-  const secondParam = "react-js";
+  const secondParam = "trending-news-videos-today-united-states";
   useEffect(() => {
     fetchVideo();
   }, []);
