@@ -7,37 +7,37 @@ import axios from "axios";
 import Usercontext from "../../contexts/Usercontext";
 
 const Home = () => {
-  // const [videoArray, setVideoArray] = useState([]);
-  // const user = useContext(Usercontext);
-  // const baseUrl = "https://youtube.googleapis.com/youtube/v3/search?";
-  // const apiKey = "&key=AIzaSyBq_tTvCbp79dd8TA2k6LCdB5EAlvdomgk";
-  // const firstParam = "&type=video&part=snippet&maxResults=";
-  // const maxResult = "12&q=";
-  // const secondParam = "trending-news-videos-today-united-states";
-  // useEffect(() => {
-  //   fetchVideo();
-  // }, []);
-  // const fetchVideo = async () => {
-  //   try {
-  //     const response = await axios
-  //       .get(`${baseUrl}${apiKey}${firstParam}${maxResult} ${secondParam}`)
-  //       .then((res) => {
-  //         console.log(res.data.items);
-  //         const videoIdArray = res.data.items.map(
-  //           (v) => "https://www.youtube.com/embed/" + v.id.videoId
-  //         );
-  //         setVideoArray(videoIdArray);
-  //       });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  const [videoArray, setVideoArray] = useState([]);
+  const user = useContext(Usercontext);
+  const baseUrl = "https://youtube.googleapis.com/youtube/v3/search?";
+  const apiKey = "&key=AIzaSyBq_tTvCbp79dd8TA2k6LCdB5EAlvdomgk";
+  const firstParam = "&type=video&part=snippet&maxResults=";
+  const maxResult = "12&q=";
+  const secondParam = "trending-news-videos-today-united-states";
+  useEffect(() => {
+    fetchVideo();
+  }, []);
+  const fetchVideo = async () => {
+    try {
+      const response = await axios
+        .get(`${baseUrl}${apiKey}${firstParam}${maxResult} ${secondParam}`)
+        .then((res) => {
+          console.log(res.data.items);
+          const videoIdArray = res.data.items.map(
+            (v) => "https://www.youtube.com/embed/" + v.id.videoId
+          );
+          setVideoArray(videoIdArray);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  // console.log(videoArray);
+  console.log(videoArray);
   return (
     <div className="Recommended-videos">
       <h5 className="Recommended-video-title">Recommended Videos</h5>
-      {/* <div className="url-png">
+      <div className="url-png">
         {videoArray.map((url) => {
           let iframe = (
             <div>
@@ -54,7 +54,7 @@ const Home = () => {
           );
           return iframe;
         })}
-      </div> */}
+      </div>
     </div>
   );
 };

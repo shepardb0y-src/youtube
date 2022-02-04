@@ -8,7 +8,7 @@ const Aside = () => {
       <Link to="/">
         <AsideRow title="Home" />
       </Link>
-      <Link to="search">
+      <Link to="/Explore">
         <AsideRow title="Explore" />
       </Link>
 
