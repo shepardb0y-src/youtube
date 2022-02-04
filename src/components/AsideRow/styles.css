@@ -1,4 +1,5 @@
 .aside-row:hover {
   background-color: lightgray;
   cursor: pointer;
+  box-shadow: 10px 5px 5px red;
 }
