@@ -14,31 +14,31 @@ const Home = () => {
   const firstParam = "&type=video&part=snippet&maxResults=";
   const maxResult = "12&q=";
   const secondParam = "trending-today-USA";
-  // useEffect(() => {
-  //   fetchVideo();
-  // }, []);
-  // const fetchVideo = async () => {
-  //   try {
-  //     const response = await axios
-  //       .get(`${baseUrl}${apiKey}${firstParam}${maxResult} ${secondParam}`)
-  //       .then((res) => {
-  //         console.log(res.data.items);
-  //         const videoIdArray = res.data.items.map(
-  //           (v) => "https://www.youtube.com/embed/" + v.id.videoId
-  //         );
-  //         setVideoArray(videoIdArray);
-  //       });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  useEffect(() => {
+    fetchVideo();
+  }, []);
+  const fetchVideo = async () => {
+    try {
+      const response = await axios
+        .get(`${baseUrl}${apiKey}${firstParam}${maxResult} ${secondParam}`)
+        .then((res) => {
+          console.log(res.data.items);
+          const videoIdArray = res.data.items.map(
+            (v) => "https://www.youtube.com/embed/" + v.id.videoId
+          );
+          setVideoArray(videoIdArray);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  // console.log(videoArray);
+  console.log(videoArray);
   return (
     <div className="Recommended-videos">
       <h5 className="Recommended-video-title">Recommended Videos</h5>
       <div className="url-png">
-        {/* {videoArray.map((url) => {
+        {videoArray.map((url) => {
           let iframe = (
             <div>
               <iframe
@@ -53,7 +53,7 @@ const Home = () => {
             </div>
           );
           return iframe;
-        })} */}
+        })}
       </div>
     </div>
   );
