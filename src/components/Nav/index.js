@@ -22,7 +22,7 @@ const Nav = () => {
   const qparam = "&type=video&part=snippet&maxResults=";
   const maxResult = "12&q=";
 
-  console.log("nav", user);
+  // console.log("nav", user);
   const handleChange = (e) => {
     setFromValue(e.target.value);
   };
@@ -31,12 +31,12 @@ const Nav = () => {
     e.preventDefault();
     setLoading(true);
 
-    console.log("submitting");
+    // console.log("submitting");
     user
       ? axios
           .get(`${baseUrl}${apiKey}${qparam}${maxResult} ${formValue}`)
           .then((res) => {
-            console.log(res.data.items);
+            // console.log(res.data.items);
             const videoIdArray = res.data.items.map(
               (v) => "https://www.youtube.com/embed/" + v.id.videoId
             );
@@ -46,7 +46,7 @@ const Nav = () => {
           .catch((err) => console.error(err))
       : null;
   };
-  console.log(videoArray);
+  // console.log(videoArray);
   // const handleClick = (e) => {
 
   // };

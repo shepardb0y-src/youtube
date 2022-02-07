@@ -23,7 +23,7 @@ const Home = () => {
       const response = await axios
         .get(`${baseUrl}${apiKey}${firstParam}${maxResult} ${secondParam}`)
         .then((res) => {
-          console.log(res.data.items);
+          // console.log(res.data.items);
           const videoIdArray = res.data.items.map(
             (v) => "https://www.youtube.com/embed/" + v.id.videoId
           );
