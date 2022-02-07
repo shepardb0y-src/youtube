@@ -68,4 +68,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
 # youtube
+
+The purpose of this app was to helop my client search videos on the internet without having to click through mulitple links to reach the video thy would like to view. Using the youtube Api i was able to implment this app. I found inspiration from this tutorial for some design ideas https://www.youtube.com/watch?v=NT299zIk2JY&t=10987s
+Making this app was a great learning experience
