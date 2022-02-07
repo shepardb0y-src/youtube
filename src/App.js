@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Search from "./components/Search";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Error from "./pages/Error";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/login" element={<Login setUser={setUser} />} />
           <Route path="/error" element={<Error />} />
         </Routes>
+        <Footer />
       </UserContext.Provider>
     </div>
   );
