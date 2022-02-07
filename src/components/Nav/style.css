@@ -35,3 +35,7 @@
   background-color: lightgray;
   margin-bottom: 8%;
 }
+.nav .login {
+  color: black;
+  text-decoration: none;
+}

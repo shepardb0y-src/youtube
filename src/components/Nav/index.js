@@ -83,8 +83,10 @@ const Nav = () => {
         </li>
 
         {!user ? (
-          <li>
-            <Link to="login">Login</Link>
+          <li className="login">
+            <Link className="login" to="login">
+              Login
+            </Link>
           </li>
         ) : (
           <li>Logout</li>
