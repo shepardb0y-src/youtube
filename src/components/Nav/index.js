@@ -15,9 +15,10 @@ import Usercontext from "../../contexts/Usercontext";
 const Nav = () => {
   const [formValue, setFromValue] = useState("");
   const [videoArray, setVideoArray] = useState([]);
+  const [loading, setLoading] = useState(false);
   const user = useContext(Usercontext);
   const baseUrl = "https://youtube.googleapis.com/youtube/v3/search?";
-  const apiKey = "&key=AIzaSyBq_tTvCbp79dd8TA2k6LCdB5EAlvdomgk";
+  const apiKey = "&key=AIzaSyD_K3eN0gFLzZTGJrai_IPM8kJfG2e2hq0";
   const qparam = "&type=video&part=snippet&maxResults=";
   const maxResult = "12&q=";
 
@@ -28,6 +29,8 @@ const Nav = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
+
     console.log("submitting");
     user
       ? axios
@@ -38,6 +41,7 @@ const Nav = () => {
               (v) => "https://www.youtube.com/embed/" + v.id.videoId
             );
             setVideoArray(videoIdArray);
+            setLoading(false);
           })
           .catch((err) => console.error(err))
       : null;
@@ -95,24 +99,42 @@ const Nav = () => {
       <div className="test">
         <Aside />
         <div>
+          {/* {loading ? (
+        <img
+          src="https://c.tenor.com/tEBoZu1ISJ8AAAAC/spinning-loading.gif"
+          alt=""
+        />
+      ) : (
+        <div id="nasa-container">
+          {data.map((item) => {
+            return <NASAData className="list" item={item} />;
+          })} */}
+
           <div className="search-results">
-            {videoArray.map((url) => {
-              console.log(url);
-              let iframe = (
-                <div>
-                  <iframe
-                    width="360"
-                    height="115"
-                    src={url}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-              );
-              return iframe;
-            })}
+            {loading ? (
+              <img
+                src="https://c.tenor.com/tEBoZu1ISJ8AAAAC/spinning-loading.gif"
+                alt=""
+              />
+            ) : (
+              videoArray.map((url) => {
+                console.log(url);
+                let iframe = (
+                  <div>
+                    <iframe
+                      width="360"
+                      height="115"
+                      src={url}
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                );
+                return iframe;
+              })
+            )}
           </div>
         </div>
       </div>
