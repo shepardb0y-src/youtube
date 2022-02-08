@@ -9,7 +9,7 @@ const Home = () => {
   const user = useContext(Usercontext);
   const [loading, setLoading] = useState(false);
   const baseUrl = "https://youtube.googleapis.com/youtube/v3/search?";
-  const apiKey = "&key=AIzaSyBq_tTvCbp79dd8TA2k6LCdB5EAlvdomgk";
+  const apiKey = "&key=AIzaSyA-SSgang6LzWYJ02Ks1PxLU56MrLDxhuk";
   const firstParam = "&type=video&part=snippet&maxResults=";
   const maxResult = "12&q=";
   const secondParam = "trending-react-js";
@@ -35,7 +35,7 @@ const Home = () => {
     }
   };
 
-  console.log(videoArray);
+  // console.log(videoArray);
   return (
     <div className="Recommended-videos">
       <h5 className="Recommended-video-title">Recommended Videos</h5>
@@ -48,7 +48,7 @@ const Home = () => {
         ) : (
           videoArray.map((url) => {
             let iframe = (
-              <div>
+              <div key={url}>
                 <iframe
                   width="360"
                   height="115"

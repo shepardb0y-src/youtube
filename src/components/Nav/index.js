@@ -18,7 +18,7 @@ const Nav = () => {
   const [loading, setLoading] = useState(false);
   const user = useContext(Usercontext);
   const baseUrl = "https://youtube.googleapis.com/youtube/v3/search?";
-  const apiKey = "&key=AIzaSyDl0K09RSPmFibHJbzkRhUAsOkBoflFz10";
+  const apiKey = "&key=AIzaSyBW3QSWU3xI-NP78X2D-oDcYLEc8mgpRVg";
   const qparam = "&type=video&part=snippet&maxResults=";
   const maxResult = "12&q=";
 
@@ -99,17 +99,6 @@ const Nav = () => {
       <div className="test">
         <Aside />
         <div>
-          {/* {loading ? (
-        <img
-          src="https://c.tenor.com/tEBoZu1ISJ8AAAAC/spinning-loading.gif"
-          alt=""
-        />
-      ) : (
-        <div id="nasa-container">
-          {data.map((item) => {
-            return <NASAData className="list" item={item} />;
-          })} */}
-
           <div className="search-results">
             {loading ? (
               <img
@@ -118,9 +107,9 @@ const Nav = () => {
               />
             ) : (
               videoArray.map((url) => {
-                console.log(url);
+                // console.log(url);
                 let iframe = (
-                  <div>
+                  <div key={url}>
                     <iframe
                       width="360"
                       height="115"

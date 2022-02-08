@@ -20,7 +20,7 @@ const Login = ({ setUser }) => {
     //gon change from home to Search Page
     navigate("/Explore");
   };
-  console.log(username);
+  // console.log(username);
 
   return (
     <form onSubmit={handleSubmit}>
