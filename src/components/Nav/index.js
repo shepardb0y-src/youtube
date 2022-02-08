@@ -18,7 +18,7 @@ const Nav = () => {
   const [loading, setLoading] = useState(false);
   const user = useContext(Usercontext);
   const baseUrl = "https://youtube.googleapis.com/youtube/v3/search?";
-  const apiKey = "&key=AIzaSyD_K3eN0gFLzZTGJrai_IPM8kJfG2e2hq0";
+  const apiKey = "&key=AIzaSyDl0K09RSPmFibHJbzkRhUAsOkBoflFz10";
   const qparam = "&type=video&part=snippet&maxResults=";
   const maxResult = "12&q=";
 
